@@ -3,6 +3,9 @@
 int main()
 {
 int choice;
+char tryagain;
+
+do{
 
 printf("\n===== MULTI-TOOL APPLICATION =====\n");  
 printf("1. Pattern Generator\n");  
@@ -166,7 +169,12 @@ else if (choice == 5)
 else  
 {  
     printf("Invalid choice.\n");  
-}  
+}
+printf("\nDo you want to try again? (Y/N): ");
+scanf(" %c", &tryagain);
+}
+while (tryagain == 'Y' || tryagain == 'y');
+printf("Thank you for using the program!\n");
 
 return 0;
 
