@@ -128,7 +128,7 @@ for (i = 0; i < rows; i++) {
         if (marks >= 1.0 && marks <= 3.0) {  
             printf("You Passed!");  
         }  
-        else if (marks == 5.0) {  
+        else if (marks >= 3.1 && marks <= 5.0) {  
             printf("You flunked!");  
         }  
         else {  
