@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
@@ -11,7 +12,7 @@ printf("\n===== MULTI-TOOL APPLICATION =====\n");
 printf("1. Pattern Generator\n");  
 printf("2. Pascal's Triangle\n");  
 printf("3. Student Grades\n");  
-printf("4. Palindrome Number\n");  
+printf("4. Palindrome Word\n");  
 printf("5. Exit\n");  
 
 printf("\nEnter your choice: ");  
@@ -138,26 +139,29 @@ for (i = 0; i < rows; i++) {
 }  
 
 
-else if (choice == 4)  
-{  
-    int n, t, rev = 0, rem;  
+else if (choice == 4)
+{
+    char word[100];
+    int i, length, palindrome = 1;
 
-    printf("Enter any number: ");  
-    scanf("%d", &n);  
+    printf("Enter a word: ");
+    scanf("%99s", word);
 
-    t = n;  
+    length = strlen(word);
 
-    for (; n > 0; n = n / 10) {  
-        rem = n % 10;  
-        rev = rev * 10 + rem;  
-    }  
+    for (i = 0; i < length / 2; i++) {
+        if (word[i] != word[length - i - 1]) {
+            palindrome = 0;
+            break;
+        }
+    }
 
-    if (t == rev) {  
-        printf("%d is palindrome.", t);  
-    }  
-    else {  
-        printf("%d is not palindrome.", t);  
-    }  
+    if (palindrome == 1) {
+        printf("%s is a palindrome word.", word);
+    }
+    else {
+        printf("%s is not a palindrome word.", word);
+    }
 }  
 
 
